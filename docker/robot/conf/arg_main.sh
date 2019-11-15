@@ -1,13 +1,15 @@
 #!/bin/bash
-
-source $CONF_DIR/arg_default.sh
+# this file holds the arguments of all robot jobs.
 
 echo -e "
-# --doc           This is an example (where "special characters" are ok!)
-# --loglevel      INFO
+--variablefile  $ROBOT_HOME/conf/var_default.py
+--loglevel      DEBUG
+--pythonpath    $ROBOT_HOME/lib
+--pythonpath    $ROBOT_HOME/res
+--extension     robot
 --outputdir     $LOG_DIR
 --debugfile     $LOG_DIR/debugfile.txt
---variablefile  $ROBOT_HOME/conf/var_linux_gc.py
+--report        NONE
 
 # Selects the test cases by name
 # --test <name>

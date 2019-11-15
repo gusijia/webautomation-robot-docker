@@ -20,7 +20,6 @@ def run_by_argfile(arg_scripts):
         ret = run(['sh', argfile], stdout=PIPE)
         args += ret.stdout.decode()
     # run robot command
-    # either use tmpfile or STDIN
     with tempfile.NamedTemporaryFile(mode='w+') as fp:
         fp.write(args)
         fp.seek(0)
@@ -29,8 +28,7 @@ def run_by_argfile(arg_scripts):
 
 
 if __name__ == "__main__":
-    print(f"backup previous logs ...")
-
+    
     print(f"\nstart robot framework for autotest ...")
     arg_main = CONF_DIR_P / 'arg_main.sh'
     run_by_argfile(arg_main)

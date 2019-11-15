@@ -1,6 +1,5 @@
 from PageObjectLibrary import PageObject
-from .BasePage import BasePage
-class LoginPage(BasePage):
+class LoginPage(PageObject):
     PAGE_URL = "/index.php?controller=authentication&back=my-account"
 
     _locators = {
@@ -10,11 +9,10 @@ class LoginPage(BasePage):
     }
 
     def _is_current_page(self):
-        # this site uses the same title for many pages,
-        # so we can't rely on the default implementation
-        # of this function. Instead, we'll check the page
-        # location, and raise an appropriate error if
-        # we are not on the correct page
+        ''' override the function to check the page location, and
+        raise an appropriate error if we are not on the correct page
+
+        '''
         location = self.selib.get_location()
         if not location.endswith(self.PAGE_URL):
             message = "Expected location to end with " + \
