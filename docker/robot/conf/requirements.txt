@@ -1,0 +1,8 @@
+requests==2.9.1
+robotframework==3.0.4
+robotframework-seleniumlibrary==3.2.0
+robotframework-pageobjectlibrary
+Fabric3
+PyMongo==3.7.2
+sshtunnel==0.1.4
+https://github.com/bulkan/robotframework-requests/archive/v0.4.7.tar.gz
