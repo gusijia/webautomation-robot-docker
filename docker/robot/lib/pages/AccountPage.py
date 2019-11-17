@@ -1,9 +1,10 @@
 from PageObjectLibrary import PageObject
-class HomePage(PageObject):
-    PAGE_URL = "/index.php"
+
+class AccountPage(PageObject):
+    PAGE_URL = "http://automationpractice.com/index.php?controller=my-account"
 
     _locators = {
-        'sign_in': '//a[@class="login"]',
+        'home_button':'//*[@id="center_column"]/ul/li/a'
     }
 
     def _is_current_page(self):
@@ -18,8 +19,3 @@ class HomePage(PageObject):
             raise Exception(message)
             return False
         return True
-
-    def click_sign_in(self):
-        self.selib.wait_until_element_is_visible(self.locator.sign_in)
-        with self._wait_for_page_refresh():
-             self.selib.click_element(self.locator.sign_in)

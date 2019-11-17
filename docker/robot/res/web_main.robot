@@ -11,9 +11,13 @@ Open Browser For Test Website
 
 Login Using Provided Credential
 | | [Arguments] | ${email} | ${password}
-| | The Current Page Should Be | pages.HomePage
-| | Click Sign In
-| | The current page should be | pages.LoginPage
-| | Enter username | ${email}
+| | The Current Page Should Be | pages.LoginPage
+| | Enter email address | ${email}
 | | Enter password | ${password}
 | | Click the login button
+
+Register New User Account
+| | The Current Page Should Be | pages.AccountCreationPage
+| | Enter Personal Information | ${firstname} | ${lastname} | ${default_pw}
+| | Enter Address | ${user_address} | ${city} | ${state_option} | ${zip_code} | ${country_option} | ${phone_number}
+| | Click Register button

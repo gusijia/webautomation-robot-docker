@@ -3,7 +3,7 @@
 
 echo -e "
 --variablefile  $ROBOT_HOME/conf/var_default.py
---loglevel      DEBUG
+--loglevel      INFO
 --pythonpath    $ROBOT_HOME/lib
 --pythonpath    $ROBOT_HOME/res
 --extension     robot
