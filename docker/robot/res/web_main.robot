@@ -21,3 +21,14 @@ Register New User Account
 | | Enter Personal Information | ${firstname} | ${lastname} | ${default_pw}
 | | Enter Address | ${user_address} | ${city} | ${state_option} | ${zip_code} | ${country_option} | ${phone_number}
 | | Click Register button
+
+Add To Shopping Cart
+| | The Current Page Should Be | pages.HomePage
+| | Go To Tshirts Category
+| | The Current Page Should Be | pages.TshirtsPage
+| | Add To Cart
+
+Go To Shopping Cart
+| | The Current Page Should Be | pages.TshirtsPage
+| | Go To Cart
+| | The Current Page Should Be | pages.OrderPage

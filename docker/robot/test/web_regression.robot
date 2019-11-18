@@ -3,8 +3,7 @@
 | Library    | PageObjectLibrary
 | Resource   | web_main.robot
 |
-| Suite Setup    | Set Selenium Speed   | 0.2
-| Test Setup    | Open Browser For Test Website | ${TEST_WEBSITE}
+| Suite Setup    | Run Keywords | Set Selenium Speed   | 0.2 | AND | Open Browser For Test Website | ${TEST_WEBSITE}
 | Suite Teardown | Close all browsers
 
 *** Test Cases ***
@@ -20,3 +19,8 @@
 | | The Current Page Should Be | pages.AccountPage
 | | Click The Home Button
 | | The Current Page Should Be | pages.HomePage
+
+| Add A Product In Shopping Cart
+| | Add To Shopping Cart
+| | Go To Shopping Cart
+| | Verify Product In Cart
