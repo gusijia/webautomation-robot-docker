@@ -19,3 +19,9 @@ class AccountPage(PageObject):
             raise Exception(message)
             return False
         return True
+
+    def click_the_home_button(self):
+        """Clicks the home button on the page to go back to home page
+        """
+        with self._wait_for_page_refresh():
+            self.selib.click_element(self.locator.home_button)

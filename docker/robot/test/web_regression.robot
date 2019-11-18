@@ -18,3 +18,5 @@
 | | Run Keyword Unless | ${result} | Register New User Account
 | | Run Keyword If | ${result} | Login Using Provided Credential | ${default_email} | ${default_pw}
 | | The Current Page Should Be | pages.AccountPage
+| | Click The Home Button
+| | The Current Page Should Be | pages.HomePage
