@@ -4,7 +4,7 @@ create a web autotest framework with docker-selenium and robotframework
 1. run `sudo bash ./script/host_setup.sh` on host to
     - install docker and docker-compose
     - install python and dependencies
-2. fill in properties file `./conf/main.properties
+2. fill in properties file `./conf/main.properties`
 
 ## How to run
 run `python3.6 ./script/run_autotest.py`
