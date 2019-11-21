@@ -1,10 +1,11 @@
 from PageObjectLibrary import PageObject
 
+
 class AccountPage(PageObject):
     PAGE_URL = "http://automationpractice.com/index.php?controller=my-account"
 
     _locators = {
-        'home_button':'//*[@id="center_column"]/ul/li/a'
+        'home_button': '//*[@id="center_column"]/ul/li/a'
     }
 
     def _is_current_page(self):

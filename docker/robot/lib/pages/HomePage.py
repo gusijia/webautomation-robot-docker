@@ -1,4 +1,6 @@
 from PageObjectLibrary import PageObject
+
+
 class HomePage(PageObject):
     PAGE_URL = "/index.php"
 

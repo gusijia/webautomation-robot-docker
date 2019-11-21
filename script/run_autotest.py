@@ -1,15 +1,9 @@
 #!/usr/bin/env python3.6
 
-from subprocess import run, DEVNULL, PIPE
+from subprocess import run
 import os
 from pathlib import Path
-from urllib.request import urlretrieve
 import configparser
-import re
-import socket
-from contextlib import closing
-from shutil import copyfile
-import time
 
 CUR_DIR = Path(os.path.realpath(__file__)).parent
 PROJ_HOME = CUR_DIR.parent
@@ -22,6 +16,7 @@ CONF['docker_dir'] = PROJ_HOME / 'docker'
 CONF['compose_yml'] = CONF['docker_dir'] / 'docker-compose.yml'
 CONF['volume_dir'] = PROJ_HOME / 'volume'
 
+
 def export_vars():
     """
     export env vars for running docker-compose.
@@ -29,6 +24,7 @@ def export_vars():
     """
     for var in CONF:
         os.putenv(var, CONF[var])
+
 
 if __name__ == "__main__":
     export_vars()

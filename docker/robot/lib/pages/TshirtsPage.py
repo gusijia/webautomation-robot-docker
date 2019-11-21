@@ -1,11 +1,13 @@
 from PageObjectLibrary import PageObject
+
+
 class TshirtsPage(PageObject):
     PAGE_URL = "/index.php?id_category=5&controller=category"
 
     _locators = {
-        'shirt_image': '//*[@id="center_column"]/ul/li/div/div[1]/div/a[1]/img',
-        'add_to_cart_button': '//*[@id="center_column"]/ul/li/div/div[2]/div[2]/a[1]',
-        'continue_shopping_button': '//*[@id="layer_cart"]/div[1]/div[2]/div[4]/span',
+        'shirt_img': '//*[@id="center_column"]/ul/li/div/div[1]/div/a[1]/img',
+        'add_to_cart': '//*[@id="center_column"]/ul/li/div/div[2]/div[2]/a[1]',
+        'continue_shopping': '//*[@id="layer_cart"]/div[1]/div[2]/div[4]/span',
         'go_to_cart': '//*[@id="header"]/div[3]/div/div/div[3]/div/a'
     }
 
@@ -23,11 +25,12 @@ class TshirtsPage(PageObject):
         return True
 
     def add_to_cart(self):
-        self.selib.mouse_over(self.locator.shirt_image)
-        self.selib.wait_until_element_is_visible(self.locator.add_to_cart_button)
-        self.selib.click_element(self.locator.add_to_cart_button)
-        self.selib.wait_until_element_is_visible(self.locator.continue_shopping_button)
-        self.selib.click_element(self.locator.continue_shopping_button)
+        self.selib.mouse_over(self.locator.shirt_img)
+        self.selib.wait_until_element_is_visible(self.locator.add_to_cart)
+        self.selib.click_element(self.locator.add_to_cart)
+        self.selib.wait_until_element_is_visible(
+            self.locator.continue_shopping)
+        self.selib.click_element(self.locator.continue_shopping)
 
     def go_to_cart(self):
         with self._wait_for_page_refresh():

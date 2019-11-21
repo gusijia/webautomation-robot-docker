@@ -1,4 +1,6 @@
 from PageObjectLibrary import PageObject
+
+
 class LoginPage(PageObject):
     PAGE_URL = "/index.php?controller=authentication&back=my-account"
 
@@ -34,11 +36,11 @@ class LoginPage(PageObject):
             self._is_current_page()
         except Exception:
             return False
-        
+
         count = self.selib.get_element_count(self.locator.create_account_error)
         result = self.selib.get_text(self.locator.create_account_error)
         if count and ("registered" in result):
-            self.logger.info(f"An account has already been registered")
+            self.logger.info("An account has already been registered")
             return True
 
     def enter_email_address(self, email):

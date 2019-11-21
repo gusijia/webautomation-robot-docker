@@ -1,14 +1,12 @@
 #!/usr/bin/env python3.6
 
-from subprocess import run, DEVNULL, PIPE
+from subprocess import run, PIPE
 import os
 from pathlib import Path
-from urllib.request import urlretrieve
-import configparser
-import re
 import tempfile
 
 CONF_DIR_P = Path(os.environ['CONF_DIR'])
+
 
 def run_by_argfile(arg_scripts):
     if isinstance(arg_scripts, (list, tuple)):
@@ -28,7 +26,7 @@ def run_by_argfile(arg_scripts):
 
 
 if __name__ == "__main__":
-    
-    print(f"\nstart robot framework for autotest ...")
+
+    print("start robot framework for autotest...")
     arg_main = CONF_DIR_P / 'arg_main.sh'
     run_by_argfile(arg_main)
