@@ -16,7 +16,8 @@ it will create three docker containers
 3. **se-hub**: [selenium grid hub](https://github.com/SeleniumHQ/docker-selenium/tree/master/Hub) image
 
 ## Code Demo
-Here is the [Demo Run](demo/demo.gif)
+Here is the demo
+![](demo/demo.gif)
 
 ## Code Structure 
 The robot docker container (under `./docker/robot`) is running robot framework tests:
