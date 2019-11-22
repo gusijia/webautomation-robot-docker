@@ -33,8 +33,7 @@ if __name__ == "__main__":
          CONF['compose_yml'], 'build'])
     print('\n\nstart running docker compose ...')
     run(['docker-compose', '--project-name', CONF['proj_name'], '--file',
-         CONF['compose_yml'],
-         'up', '-d'])
+         CONF['compose_yml'], 'up', '-d'])
     print('\n\nstart robot automation testing ...')
     cmd = ("docker exec -i robot sh -c 'python "
            "\"${ROBOT_HOME}/script/run_robot.py\"'")
